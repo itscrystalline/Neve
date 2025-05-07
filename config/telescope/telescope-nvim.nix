@@ -30,17 +30,6 @@
         zoxide = {
           enable = true;
           settings = {
-            mappings = {
-              "<leader>cd" = {
-                action = {
-                  __raw = ''
-                    function()
-                      require("telescope").extensions.zoxide.list()
-                    end
-                  '';
-                };
-              };
-            };
             prompt_title = "Zoxide List";
           };
         };
@@ -69,6 +58,13 @@
         };
       };
       keymaps = {
+        "<leader>cd" = {
+          action.__raw = ''
+            function()
+              require("telescope").extensions.zoxide.list()
+            end
+          '';
+        };
         "<leader><space>" = {
           action = "find_files";
           options.desc = "Find project files";
