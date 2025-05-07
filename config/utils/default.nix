@@ -28,6 +28,7 @@
     ./which-key.nix
     ./wilder.nix
     ./rainbow-delimiters.nix
+    ./lazygit.nix
   ];
 
   options = {
@@ -58,5 +59,6 @@
     which-key.enable = lib.mkDefault true;
     wilder.enable = lib.mkDefault false;
     rainbow-delimiters.enable = lib.mkDefault true;
+    lazygit.enable = lib.mkDefault true;
   };
 }
