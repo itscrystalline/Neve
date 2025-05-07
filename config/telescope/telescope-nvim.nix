@@ -58,7 +58,7 @@
         };
       };
       keymaps = {
-        "<leader>cd" = {
+        "<leader>z" = {
           action = "zoxide list";
           options.desc = "Zoxide List";
         };
