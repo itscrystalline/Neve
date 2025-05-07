@@ -59,11 +59,8 @@
       };
       keymaps = {
         "<leader>cd" = {
-          action.__raw = ''
-            function()
-              require("telescope").extensions.zoxide.list()
-            end
-          '';
+          action = "zoxide list";
+          options.desc = "Zoxide List";
         };
         "<leader><space>" = {
           action = "find_files";

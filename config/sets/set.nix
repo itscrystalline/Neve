@@ -129,19 +129,19 @@
       local o = vim.o
         -- Neovide
       if g.neovide then
-        g.neovide_fullscreen = false
-        g.neovide_hide_mouse_when_typing = false
-        g.neovide_refresh_rate = 165
-        g.neovide_cursor_vfx_mode = "ripple"
-        g.neovide_cursor_animate_command_line = true
-        g.neovide_cursor_animate_in_insert_mode = true
-        g.neovide_cursor_vfx_particle_lifetime = 5.0
-        g.neovide_cursor_vfx_particle_density = 14.0
-        g.neovide_cursor_vfx_particle_speed = 12.0
-        g.neovide_transparency = 0.8
+        vim.keymap.set('v', '<C-c>', '"+y') -- Copy
+        vim.keymap.set('n', '<C-v>', '"+P') -- Paste normal mode
+        vim.keymap.set('v', '<C-v>', '"+P') -- Paste visual mode
+        vim.keymap.set('c', '<C-v>', '<C-R>+') -- Paste command mode
+        vim.keymap.set('i', '<C-v>', '<ESC>l"+Pli') -- Paste insert mode
 
-        -- Neovide Fonts
-        o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
+        g.neovide_padding_top = 16
+        g.neovide_padding_bottom = 16
+        g.neovide_padding_right = 16
+        g.neovide_padding_left = 16
+        g.neovide_hide_mouse_when_typing = false
+        g.neovide_cursor_vfx_mode = "railgun"
+        g.neovide_cursor_animation_length = 0.1
       end
     '';
   };
