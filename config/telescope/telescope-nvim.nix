@@ -27,6 +27,23 @@
             };
           };
         };
+        zoxide = {
+          enable = true;
+          settings = {
+            mappings = {
+              "<leader>cd" = {
+                action = {
+                  __raw = ''
+                    function(...)
+                      require("telescope").extensions.zoxide.list
+                    end
+                  '';
+                };
+              };
+            };
+            prompt_title = "Zoxide List";
+          };
+        };
       };
       # If you'd prefer Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
       settings = {
@@ -56,7 +73,7 @@
           action = "find_files";
           options.desc = "Find project files";
         };
-        "<leader>/" = {
+        "<leader>fw" = {
           action = "live_grep";
           options.desc = "Grep (root dir)";
         };
