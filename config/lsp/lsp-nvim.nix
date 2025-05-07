@@ -13,6 +13,7 @@
       };
       lsp = {
         enable = true;
+        inlayHints = true;
         capabilities = "offsetEncoding = 'utf-16'";
         servers = {
           clangd = {
