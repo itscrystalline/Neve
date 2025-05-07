@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     wilder.enable = lib.mkEnableOption "Enable wilder module";
   };
@@ -46,7 +49,7 @@
                   start_at_boundary = 0,
                 }),
               })
-            )      
+            )
         ''
       ];
     };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     todo-comments.enable = lib.mkEnableOption "Enable todo-comments module";
   };

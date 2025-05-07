@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     tmux-navigator.enable = lib.mkEnableOption "Enable tmux-navigator module";
   };

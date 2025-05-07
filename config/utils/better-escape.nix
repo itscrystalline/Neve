@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     better-escape.enable = lib.mkEnableOption "Enable better-escape module";
   };

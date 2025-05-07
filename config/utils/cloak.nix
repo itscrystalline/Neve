@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     cloak.enable = lib.mkEnableOption "Enable cloak module";
   };

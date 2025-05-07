@@ -6,27 +6,24 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixvim,
-      flake-utils,
-      ...
-    }@inputs:
-    let
-      config = import ./config; # import the module directly
-      # Enable unfree packages
-      nixpkgsConfig = {
-        allowUnfree = true;
-      };
-    in
+  outputs = {
+    self,
+    nixpkgs,
+    nixvim,
+    flake-utils,
+    ...
+  } @ inputs: let
+    config = import ./config; # import the module directly
+    # Enable unfree packages
+    nixpkgsConfig = {
+      allowUnfree = true;
+    };
+  in
     {
       nixvimModule = config;
     }
     // flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         nixvimLib = nixvim.lib.${system};
         pkgs = import nixpkgs {
           inherit system;
@@ -41,8 +38,7 @@
             inherit self;
           };
         };
-      in
-      {
+      in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
           default = nixvimLib.check.mkTestDerivationFromNvim {

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     gitsigns.enable = lib.mkEnableOption "Enable gitsigns module";
   };

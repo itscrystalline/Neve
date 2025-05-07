@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     luasnip.enable = lib.mkEnableOption "Enable luasnip module";
   };

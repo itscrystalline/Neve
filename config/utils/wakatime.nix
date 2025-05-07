@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     wakatime.enable = lib.mkEnableOption "Enable wakatime module";
   };

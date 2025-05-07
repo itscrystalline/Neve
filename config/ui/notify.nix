@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     notify.enable = lib.mkEnableOption "Enable notify module";
   };

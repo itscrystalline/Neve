@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     nvim-autopairs.enable = lib.mkEnableOption "Enable nvim-autopairs module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     treesitter-nvim.enable = lib.mkEnableOption "Enable treesitter-nvim module";
   };

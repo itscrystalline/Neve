@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     nvterm.enable = lib.mkEnableOption "Enable nvterm module";
   };

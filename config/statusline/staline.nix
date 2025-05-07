@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     staline.enable = lib.mkEnableOption "Enable staline module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     catppuccin.enable = lib.mkEnableOption "Enable catppuccin module";
   };
@@ -40,10 +43,10 @@
                 background = true;
               };
               underlines = {
-                errors = [ "underline" ];
-                hints = [ "underline" ];
-                information = [ "underline" ];
-                warnings = [ "underline" ];
+                errors = ["underline"];
+                hints = ["underline"];
+                information = ["underline"];
+                warnings = ["underline"];
               };
             };
           };

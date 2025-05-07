@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     nvim-surround.enable = lib.mkEnableOption "Enable nvim-surround module";
   };

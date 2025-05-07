@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     sidebar.enable = lib.mkEnableOption "Enable sidebar module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     which-key.enable = lib.mkEnableOption "Enable which-key module";
   };

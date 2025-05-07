@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     undotree.enable = lib.mkEnableOption "Enable undotree module";
   };

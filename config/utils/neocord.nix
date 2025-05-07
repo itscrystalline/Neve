@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     neocord.enable = lib.mkEnableOption "Enable neocord module";
   };
@@ -8,7 +11,7 @@
       enable = true;
       settings = {
         auto_update = true;
-        blacklist = [ ];
+        blacklist = [];
         client_id = "1157438221865717891";
         debounce_timeout = 10;
         editing_text = "Editing...";

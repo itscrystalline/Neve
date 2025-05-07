@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   imports = [
     ./treesitter-nvim.nix
     ./nvim-jdtls.nix

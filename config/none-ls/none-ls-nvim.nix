@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     none-ls-nvim.enable = lib.mkEnableOption "Enable none-ls-nvim module";
   };

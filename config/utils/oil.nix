@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     oil.enable = lib.mkEnableOption "Enable oil module";
   };
@@ -17,7 +20,6 @@
           win_options = {
             winblend = 0;
           };
-
         };
 
         float = {

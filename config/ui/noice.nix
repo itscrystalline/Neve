@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     noice.enable = lib.mkEnableOption "Enable noice module";
   };

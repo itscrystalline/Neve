@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     harpoon.enable = lib.mkEnableOption "Enable harpoon module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     trouble.enable = lib.mkEnableOption "Enable trouble module";
   };

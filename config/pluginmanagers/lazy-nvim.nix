@@ -2,8 +2,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options = {
     lazy-nvim.enable = lib.mkEnableOption "Enable lazy-nvim module";
   };

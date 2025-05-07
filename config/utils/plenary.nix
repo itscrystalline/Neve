@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options = {
     plenary.enable = lib.mkEnableOption "Enable plenary module";
   };

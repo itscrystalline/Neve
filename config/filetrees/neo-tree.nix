@@ -1,10 +1,12 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     neo-tree.enable = lib.mkEnableOption "Enable neo-tree module";
   };
   config = lib.mkIf config.neo-tree.enable {
-
     plugins.neo-tree = {
       enable = true;
       enableDiagnostics = true;

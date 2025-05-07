@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     copilot.enable = lib.mkEnableOption "Enable copilot module";
   };
@@ -46,7 +49,7 @@
         "." = false;
       };
       copilotNodeCommand = "node"; # Node.js version must be > 18.x
-      serverOptsOverrides = { };
+      serverOptsOverrides = {};
     };
   };
 }

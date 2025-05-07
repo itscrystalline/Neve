@@ -1,9 +1,11 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   javaTestPath = "/nix/store/j3nvmhvj2pmnykw5pbm51dn0bz4cv6j3-vscode-extension-vscjava-vscode-java-test-0.38.2023032402/share/vscode/extensions/vscjava.vscode-java-test/server/com.microsoft.java.test.plugin-0.38.2.jar
  ";
-in
-{
+in {
   options = {
     nvim-jdtls.enable = lib.mkEnableOption "Enable nvim-jdtls module";
   };
@@ -85,3 +87,4 @@ in
 #
 #   jdtls.start_or_attach(config)
 # '';
+

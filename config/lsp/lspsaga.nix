@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     lspsaga.enable = lib.mkEnableOption "Enable lspsaga module";
   };

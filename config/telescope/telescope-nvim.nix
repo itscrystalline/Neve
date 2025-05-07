@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     telescope-nvim.enable = lib.mkEnableOption "Enable telescope-nvim module";
   };

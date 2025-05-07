@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     barbecue.enable = lib.mkEnableOption "Enable barbecue module";
   };

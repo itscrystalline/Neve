@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     persistence.enable = lib.mkEnableOption "Enable persistence module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     neogit.enable = lib.mkEnableOption "Enable neogit module";
   };

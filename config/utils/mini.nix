@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     mini.enable = lib.mkEnableOption "Enable mini module";
   };

@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     nvim-dap.enable = lib.mkEnableOption "Enable Debug Adapter Protocol module";
   };

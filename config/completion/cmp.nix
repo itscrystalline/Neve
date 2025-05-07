@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     cmp.enable = lib.mkEnableOption "Enable cmp module";
   };
@@ -73,7 +76,7 @@
               name = "buffer";
               keyword_length = 5;
             }
-            { name = "copilot"; }
+            {name = "copilot";}
             {
               name = "path";
               keyword_length = 3;
@@ -165,7 +168,7 @@
         }, {
         { name = 'cmdline' }
         }),
-      })  
+      })
     '';
   };
 }

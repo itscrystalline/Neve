@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     web-devicons.enable = lib.mkEnableOption "Enable web-devicons module";
   };

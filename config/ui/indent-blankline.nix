@@ -1,10 +1,12 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     indent-blankline.enable = lib.mkEnableOption "Enable indent-blankline module";
   };
   config = lib.mkIf config.indent-blankline.enable {
-
     plugins = {
       indent-blankline = {
         enable = true;

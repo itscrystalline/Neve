@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   # TODO: Refactor this as neotest is supported on nixvim now
   options = {
     neotest.enable = lib.mkEnableOption "Enable neotest module";

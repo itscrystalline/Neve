@@ -1,10 +1,12 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     conform.enable = lib.mkEnableOption "Enable conform module";
   };
   config = lib.mkIf config.conform.enable {
-
     plugins.conform-nvim = {
       enable = true;
       settings = {
@@ -55,16 +57,16 @@
             __unkeyed-2 = "prettier";
             stop_after_first = true;
           };
-          java = [ "google-java-format" ];
-          python = [ "black" ];
-          lua = [ "stylua" ];
-          nix = [ "nixfmt" ];
+          java = ["google-java-format"];
+          python = ["black"];
+          lua = ["stylua"];
+          nix = ["nixfmt"];
           markdown = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
             stop_after_first = true;
           };
-          rust = [ "rustfmt" ];
+          rust = ["rustfmt"];
         };
       };
     };
