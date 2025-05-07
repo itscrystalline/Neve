@@ -17,7 +17,7 @@
         codeAction = "💡"; # Can be any symbol you want 💡
       };
       hover = {
-        openCmd = "!floorp"; # Choose your browser
+        openCmd = "!zen"; # Choose your browser
         openLink = "gx";
       };
       diagnostic = {
