@@ -42,10 +42,10 @@
         };
         formatting = {
           alejandra = {
-            enable = false;
+            enable = true;
           };
           nixfmt = {
-            enable = true;
+            enable = false;
           };
           prettier = {
             enable = true;
