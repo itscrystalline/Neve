@@ -34,8 +34,8 @@
               "<leader>cd" = {
                 action = {
                   __raw = ''
-                    function(...)
-                      require("telescope").extensions.zoxide.list
+                    function()
+                      require("telescope").extensions.zoxide.list()
                     end
                   '';
                 };
