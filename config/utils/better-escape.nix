@@ -13,6 +13,7 @@
         timeout = 200;
         default_mappings = false;
         mappings = {
+          t.j.__raw = "{false}";
           i = {
             j = {
               k = "<Esc>";
