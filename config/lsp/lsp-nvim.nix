@@ -123,10 +123,10 @@
               action = "definition";
               desc = "Goto Definition";
             };
-            gr = {
-              action = "references";
-              desc = "Goto References";
-            };
+            # gr = {
+            #   action = "references";
+            #   desc = "Goto References";
+            # };
             gD = {
               action = "declaration";
               desc = "Goto Declaration";
@@ -143,10 +143,10 @@
               action = "hover";
               desc = "Hover";
             };
-            "<leader>cw" = {
-              action = "workspace_symbol";
-              desc = "Workspace Symbol";
-            };
+            # "<leader>cw" = {
+            #   action = "workspace_symbol";
+            #   desc = "Workspace Symbol";
+            # };
             "<leader>cr" = {
               action = "rename";
               desc = "Rename";

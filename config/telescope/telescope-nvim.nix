@@ -58,6 +58,18 @@
         };
       };
       keymaps = {
+        gs = {
+          action = "lsp_document_symbols";
+          options.desc = "LSP Document Symbols";
+        };
+        gS = {
+          action = "lsp_dynamic_workspace_symbols";
+          options.desc = "LSP Wormspace Symbols";
+        };
+        gr = {
+          action = "lsp_references";
+          options.desc = "LSP References under the cursor";
+        };
         "<leader>z" = {
           action = "zoxide list";
           options.desc = "Zoxide List";
