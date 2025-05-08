@@ -15,6 +15,14 @@
             light = "macchiato";
             dark = "mocha";
           };
+          custom_highlights = ''
+            function(colors)
+              return {
+                AlphaHeader = { fg = colors.pink },
+                TelescopeBorder = { fg = colors.pink },
+              }
+            end
+          '';
           flavour = "mocha"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
           disable_bold = false;
           disable_italic = false;
