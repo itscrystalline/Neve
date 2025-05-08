@@ -8,6 +8,17 @@
     nvterm.enable = lib.mkEnableOption "Enable nvterm module";
   };
   config = lib.mkIf config.nvterm.enable {
+    keymaps = [
+      {
+        mode = "t";
+        key = "<C-x>";
+        action = "<C-\\><C-N>>";
+        options = {
+          silent = true;
+          desc = "Escape terminal mode";
+        };
+      }
+    ];
     extraPlugins = [
       pkgs.vimPlugins.nvterm
     ];
