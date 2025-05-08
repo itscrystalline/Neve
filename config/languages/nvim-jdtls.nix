@@ -4,8 +4,12 @@
   config,
   ...
 }: let
-  javaTestPath = "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/server/com.microsoft.java.test.plugin-0.38.2.jar";
-  javaDebug = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar";
+  javaTestPath = "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/server";
+  javaDebug = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server";
+  getJars = plugin:
+      map
+      (jar: "${plugin}/${jar}")
+      (builtins.attrNames (builtins.readDir plugin));
 in {
   options = {
     nvim-jdtls.enable = lib.mkEnableOption "Enable nvim-jdtls module";
@@ -17,9 +21,13 @@ in {
         cmd = [
           "${pkgs.jdt-language-server}/bin/jdtls"
           "-configuration"
-          "~/.cache/jdtls/config"
+          { __raw = ''
+            vim.fn.stdpath("cache") .. "/jdtls/config"
+          ''; }
           "-data"
-          "~/.cache/jdtls/workspace"
+          { __raw = ''
+            vim.fn.stdpath("cache") .. "/jdtls/workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t") 
+          ''; }
         ];
         java = {
           signatureHelp = true;
@@ -45,11 +53,12 @@ in {
           format = {
             enabled = true;
           };
+          gradle.enabled = true;
         };
         init_options = {
-          bundles = [
-            "${javaDebug}"
-            "${javaTestPath}"
+          bundles = builtins.concatLists [
+            (getJars javaTestPath)
+            (getJars javaDebug)
           ];
         };
       };
