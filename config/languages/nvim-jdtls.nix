@@ -24,6 +24,27 @@ in {
         java = {
           signatureHelp = true;
           completion = true;
+          eclipse = {
+            downloadSources = true;
+          };
+          configuration = {
+            updateBuildConfiguration = "automatic";
+          };
+          maven = {
+            downloadSources = true;
+          };
+          implementationsCodeLens = {
+            enabled = true;
+          };
+          referencesCodeLens = {
+            enabled = true;
+          };
+          references = {
+            includeDecompiledSources = true;
+          };
+          format = {
+            enabled = true;
+          };
         };
         init_options = {
           bundles = [
