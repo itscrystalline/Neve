@@ -227,7 +227,7 @@
 
       {
         mode = "v";
-        key = "J";
+        key = "<A-Up>";
         action = ":m '>+1<CR>gv=gv";
         options = {
           silent = true;
@@ -237,11 +237,31 @@
 
       {
         mode = "v";
-        key = "K";
+        key = "<A-Down>";
         action = ":m '<-2<CR>gv=gv";
         options = {
           silent = true;
           desc = "Move down when line is highlighted";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<A-Down>";
+        action = ":m .+1<CR>==";
+        options = {
+          silent = true;
+          desc = "Move line down";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<A-Up>";
+        action = ":m .-2<CR>==";
+        options = {
+          silent = true;
+          desc = "Move line up";
         };
       }
 
