@@ -25,8 +25,8 @@
       				height = 0.4,
       				border = "single",
       			},
-      			horizontal = { location = "rightbelow", split_ratio = 0.5 },
-      			vertical = { location = "rightbelow", split_ratio = 0.5 },
+      			horizontal = { location = "rightbelow", split_ratio = 0.25 },
+      			vertical = { location = "rightbelow", split_ratio = 0.25 },
       		},
       	},
       	behavior = {
