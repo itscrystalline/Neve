@@ -20,6 +20,7 @@
               return {
                 AlphaHeader = { fg = colors.pink },
                 TelescopeBorder = { fg = colors.pink },
+                LazygitBorder = { fg = colors.pink },
               }
             end
           '';
