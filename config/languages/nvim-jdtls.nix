@@ -4,8 +4,8 @@
   config,
   ...
 }: let
-  javaTestPath = "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/server/com.microsoft.java.test.plugin-0.38.2.jar
- ";
+  javaTestPath = "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/server/com.microsoft.java.test.plugin-0.38.2.jar";
+  javaDebug = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar";
 in {
   options = {
     nvim-jdtls.enable = lib.mkEnableOption "Enable nvim-jdtls module";
@@ -13,11 +13,11 @@ in {
   config = lib.mkIf config.nvim-jdtls.enable {
     plugins.jdtls = {
       enable = true;
-      # configuration = "/path/to/configuration";
-      # data = "~/.cache/jdtls/workspace";
       settings = {
         cmd = [
           "${pkgs.jdt-language-server}/bin/jdtls"
+          "-configuration"
+          "~/.cache/jdtls/config"
           "-data"
           "~/.cache/jdtls/workspace"
         ];
@@ -48,7 +48,7 @@ in {
         };
         init_options = {
           bundles = [
-            "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar"
+            "${javaDebug}"
             "${javaTestPath}"
           ];
         };
