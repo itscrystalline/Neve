@@ -49,6 +49,7 @@
                 warnings = ["underline"];
               };
             };
+            rainbow_delimiters = true;
           };
         };
       };
