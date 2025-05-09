@@ -227,21 +227,21 @@
 
       {
         mode = "v";
-        key = "<A-Up>";
+        key = "<A-Down>";
         action = ":m '>+1<CR>gv=gv";
         options = {
           silent = true;
-          desc = "Move up when line is highlighted";
+          desc = "Move down when line is highlighted";
         };
       }
 
       {
         mode = "v";
-        key = "<A-Down>";
+        key = "<A-Up>";
         action = ":m '<-2<CR>gv=gv";
         options = {
           silent = true;
-          desc = "Move down when line is highlighted";
+          desc = "Move up when line is highlighted";
         };
       }
 
