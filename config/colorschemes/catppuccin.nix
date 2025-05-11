@@ -21,6 +21,10 @@
                 AlphaHeader = { fg = colors.pink },
                 TelescopeBorder = { fg = colors.pink },
                 LazygitBorder = { fg = colors.pink },
+                FloatBorder = { fg = colors.pink },
+                LspInfoBorder = { fg = colors.pink },
+                DapUIFloatBorder = { fg = colors.pink },
+                MiniNotifyBorder = { fg = colors.pink },
               }
             end
           '';
