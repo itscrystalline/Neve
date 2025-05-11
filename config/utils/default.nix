@@ -29,6 +29,7 @@
     ./wilder.nix
     ./rainbow-delimiters.nix
     ./direnv.nix
+    ./firenvim.nix
   ];
 
   options = {
@@ -60,5 +61,6 @@
     wilder.enable = lib.mkDefault false;
     rainbow-delimiters.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;
+    firenvim.enable = lib.mkDefault true;
   };
 }
