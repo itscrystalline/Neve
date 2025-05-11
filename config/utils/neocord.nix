@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -9,6 +10,12 @@
   config = lib.mkIf config.neocord.enable {
     plugins.neocord = {
       enable = true;
+
+      package = (
+        pkgs.vimPlugins.neocord.overrideAttrs (final: prev: {
+          patches = (prev.patches or []) ++ [./neocord-firenvim.patch];
+        })
+      );
       settings = {
         auto_update = true;
         blacklist = [];

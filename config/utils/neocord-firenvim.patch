@@ -1,0 +1,14 @@
+diff --git a/lua/neocord/utils.lua b/lua/neocord/utils.lua
+index 8259615..09b53e7 100644
+--- a/lua/neocord/utils.lua
++++ b/lua/neocord/utils.lua
+@@ -18,7 +18,7 @@ end
+ 
+ function utils.get_gui_info()
+   local info = vim.api.nvim_get_chan_info(1).client
+-  if info.type == "ui" then
++  if info ~= nil and info.type == "ui" then
+     return info.name
+   end
+   return nil
+
