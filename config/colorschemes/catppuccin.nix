@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options = {
@@ -10,6 +11,9 @@
     colorschemes = {
       catppuccin = {
         enable = true;
+        package = pkgs.vimPlugins.catppuccin-nvim.overrideAttrs (final: prev: {
+          patches = (prev.patches or []) ++ [./catppuccin_pink.patch];
+        });
         settings = {
           background = {
             light = "macchiato";
@@ -25,6 +29,13 @@
                 LspInfoBorder = { fg = colors.pink },
                 DapUIFloatBorder = { fg = colors.pink },
                 MiniNotifyBorder = { fg = colors.pink },
+                NeoTreeDirectoryName = { fg = colors.pink },
+                NeoTreeDirectoryIcon= { fg = colors.pink },
+                NeoTreeRootName = { fg = colors.pink },
+                NeoTreeTitleBar = { bg = colors.pink },
+                lualine_a_normal = { bg = colors.pink },
+                lualine_b_normal = { fg = colors.pink },
+                lualine_c_normal = { fg = colors.pink },
               }
             end
           '';

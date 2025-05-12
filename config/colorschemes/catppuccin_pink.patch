@@ -1,0 +1,16 @@
+diff --git a/lua/catppuccin/utils/lualine.lua b/lua/catppuccin/utils/lualine.lua
+index 8f0b1f0..2451475 100644
+--- a/lua/catppuccin/utils/lualine.lua
++++ b/lua/catppuccin/utils/lualine.lua
+@@ -6,8 +6,8 @@ return function(flavour)
+ 	local transparent_bg = O.transparent_background and "NONE" or C.mantle
+ 
+ 	catppuccin.normal = {
+-		a = { bg = C.blue, fg = C.mantle, gui = "bold" },
+-		b = { bg = C.surface0, fg = C.blue },
++		a = { bg = C.pink, fg = C.mantle, gui = "bold" },
++		b = { bg = C.surface0, fg = C.pink },
+ 		c = { bg = transparent_bg, fg = C.text },
+ 	}
+ 
+
