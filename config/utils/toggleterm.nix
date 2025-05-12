@@ -34,6 +34,7 @@
       settings = {
         autochdir = true;
         open_mapping = "[[<leader>n]]";
+        start_in_insert = false;
         size = ''
           function(term)
             if term.direction == "horizontal" then
