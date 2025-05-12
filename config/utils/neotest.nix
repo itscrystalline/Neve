@@ -30,7 +30,6 @@
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
-      FixCursorHold-nvim
       nvim-nio
     ];
     keymaps = [

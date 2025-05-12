@@ -30,6 +30,7 @@
     ./rainbow-delimiters.nix
     ./direnv.nix
     ./firenvim.nix
+    ./toggleterm.nix
   ];
 
   options = {
@@ -46,7 +47,7 @@
     nvim-autopairs.enable = lib.mkDefault true;
     colorizer.enable = lib.mkDefault true;
     nvim-surround.enable = lib.mkDefault true;
-    nvterm.enable = lib.mkDefault true;
+    nvterm.enable = lib.mkDefault false;
     oil.enable = lib.mkDefault true;
     persistence.enable = lib.mkDefault true;
     plenary.enable = lib.mkDefault true;
@@ -62,5 +63,6 @@
     rainbow-delimiters.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;
     firenvim.enable = lib.mkDefault true;
+    toggleterm.enable = lib.mkDefault true;
   };
 }
