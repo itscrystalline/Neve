@@ -379,7 +379,6 @@
           desc = "Copy to system clipboard";
         };
       }
-
       {
         mode = [
           "n"
@@ -389,6 +388,28 @@
         action = "\"+Y";
         options = {
           desc = "Copy to system clipboard";
+        };
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        key = "<leader>p";
+        action = "\"+p";
+        options = {
+          desc = "Paste from system clipboard";
+        };
+      }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        key = "<leader>P";
+        action = "\"+P";
+        options = {
+          desc = "Paste from system clipboard";
         };
       }
 
