@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -116,6 +117,7 @@
             };
           };
           asm_lsp = {
+            package = pkgs.unstable.asm-lsp;
             enable = true;
           };
         };
