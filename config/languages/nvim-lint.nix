@@ -22,7 +22,6 @@
         typescriptreact = ["eslint_d"];
         json = ["jsonlint"];
         java = ["checkstyle"];
-        haskell = ["hlint"];
         bash = ["shellcheck"];
       };
     };

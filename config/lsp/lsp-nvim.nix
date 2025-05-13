@@ -115,6 +115,9 @@
               };
             };
           };
+          asm_lsp = {
+            enable = true;
+          };
         };
         keymaps = {
           silent = true;
