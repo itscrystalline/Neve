@@ -137,7 +137,11 @@
             enable = true;
           };
           kotlin_language_server = {
+            package = pkgs.unstable.kotlin-language-server;
             enable = true;
+            settings.init_options.storagePath.__raw = ''
+              vim.fn.resolve(vim.fn.stdpath("cache") .. "/kotlin_language_server")
+            '';
           };
         };
         keymaps = {
