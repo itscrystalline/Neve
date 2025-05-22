@@ -58,6 +58,7 @@
             stop_after_first = true;
           };
           java = ["google-java-format"];
+          kotlin = ["ktfmt"];
           python = ["black"];
           lua = ["stylua"];
           nix = ["alejandra"];
