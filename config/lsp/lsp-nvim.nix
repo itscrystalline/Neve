@@ -136,6 +136,9 @@
             package = pkgs.unstable.asm-lsp;
             enable = true;
           };
+          kotlin_language_server = {
+            enable = true;
+          };
         };
         keymaps = {
           silent = true;
