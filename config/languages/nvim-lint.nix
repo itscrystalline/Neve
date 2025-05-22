@@ -22,6 +22,7 @@
         typescriptreact = ["eslint_d"];
         json = ["jsonlint"];
         java = ["checkstyle"];
+        kotlin = ["ktlint"];
         bash = ["shellcheck"];
       };
     };
