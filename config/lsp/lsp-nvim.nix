@@ -133,11 +133,11 @@
             };
           };
           asm_lsp = {
-            package = pkgs.unstable.asm-lsp;
+            package = pkgs.asm-lsp;
             enable = true;
           };
           kotlin_language_server = {
-            package = pkgs.unstable.kotlin-language-server;
+            package = pkgs.kotlin-language-server;
             enable = true;
             # settings.__raw = ''
             #   init_options = {

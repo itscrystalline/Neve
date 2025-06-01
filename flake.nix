@@ -2,7 +2,7 @@
   description = "Neve is a Neovim configuration built with Nixvim, which allows you to use Nix language to manage Neovim plugins/options";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixOS/nixpkgs/nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -10,7 +10,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     nixvim,
     flake-utils,
     ...
@@ -30,13 +29,6 @@
         pkgs = import nixpkgs {
           inherit system;
           config = nixpkgsConfig;
-          overlays = [
-            (final: prev: {
-              unstable = import nixpkgs-unstable {
-                inherit (prev) system;
-              };
-            })
-          ];
         };
         nixvim' = nixvim.legacyPackages.${system};
         nvim = nixvim'.makeNixvimWithModule {
@@ -61,7 +53,7 @@
           default = nvim;
         };
 
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.alejandra;
       }
     );
 }

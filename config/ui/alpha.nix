@@ -35,6 +35,34 @@
         (padding 6)
         {
           type = "button";
+          val = "  Zoxide";
+          on_press = {
+            __raw = "function() require('telescope').extensions.zoxide.list() end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "z"
+              ":Telescope zoxide list <CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "z";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
           val = "  Find File";
           on_press = {
             __raw = "function() require('telescope.builtin').find_files() end";
