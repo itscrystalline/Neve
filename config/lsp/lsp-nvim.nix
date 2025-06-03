@@ -95,7 +95,12 @@
           ruff = {
             enable = true;
           };
-
+          zls = {
+            enable = true;
+            settings = {
+              enable_build_on_save = true;
+            };
+          };
           # rust_analyzer = {
           #   enable = true;
           #   installCargo = true;
@@ -226,6 +231,11 @@
             end,
           })
         '';
+      };
+
+      zig = {
+        enable = true;
+        settings.fmt_autosave = 1;
       };
 
       rustaceanvim = {
