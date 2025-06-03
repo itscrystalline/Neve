@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options = {
@@ -71,6 +72,29 @@
         };
       };
     };
+
+    extraPackages = with pkgs; [
+      gcc
+      statix
+      alejandra
+      prettierd
+      stylua
+      black
+      rustfmt
+      checkstyle
+      google-java-format
+      cpplint
+      golangci-lint
+      selene
+      eslint_d
+      nodePackages.jsonlint
+      checkstyle
+      shellcheck
+      ktlint
+    ];
+    extraPython3Packages = p: [
+      p.flake8
+    ];
 
     keymaps = [
       {

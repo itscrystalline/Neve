@@ -1,12 +1,21 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options = {
     nvim-dap.enable = lib.mkEnableOption "Enable Debug Adapter Protocol module";
   };
   config = lib.mkIf config.nvim-dap.enable {
+    extraPackages = with pkgs;
+      [
+        coreutils
+        lldb_19
+      ]
+      ++ lib.optionals pkgs.stdenv.isLinux [
+        pkgs.gdb
+      ];
     plugins = {
       dap = {
         enable = true;
@@ -16,14 +25,57 @@
             texthl = "DapBreakpoint";
           };
           dapBreakpointCondition = {
-            text = "●";
+            text = "";
             texthl = "DapBreakpointCondition";
           };
+          dapBreakpointRejected = {
+            text = "";
+            texthl = "DapBreakpointRejected";
+          };
           dapLogPoint = {
-            text = "◆";
+            text = "";
             texthl = "DapLogPoint";
           };
+          dapStopped = {
+            text = "";
+            texthl = "DapStopped";
+          };
         };
+
+        adapters = {
+          executables = {
+            cppdbg = {
+              command = "gdb";
+              args = [
+                "-i"
+                "dap"
+              ];
+            };
+            gdb = {
+              command = "gdb";
+              args = [
+                "-i"
+                "dap"
+              ];
+            };
+            lldb = {
+              command = lib.getExe' pkgs.lldb "lldb-dap";
+            };
+          };
+          servers = {
+            codelldb = {
+              port = 13000;
+              executable = {
+                command = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+                args = [
+                  "--port"
+                  "13000"
+                ];
+              };
+            };
+          };
+        };
+
         configurations = {
           java = [
             {
@@ -52,6 +104,12 @@
       };
       dap-python = {
         enable = true;
+      };
+      dap-lldb = {
+        enable = true;
+        settings = {
+          codelldb_path = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+        };
       };
     };
     keymaps = [
@@ -234,5 +292,10 @@
         };
       }
     ];
+    extraConfigLua = ''
+      require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
+      require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
+      require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
+    '';
   };
 }
