@@ -75,6 +75,7 @@
 
     extraPackages = with pkgs; [
       gcc
+      clang-tools
       statix
       alejandra
       prettierd
