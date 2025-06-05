@@ -48,6 +48,9 @@
           nixd = {
             enable = true;
           };
+          volar = {
+            enable = true;
+          };
           ts_ls = {
             enable = true;
             autostart = true;
@@ -56,8 +59,16 @@
               "javascriptreact"
               "typescript"
               "typescriptreact"
+              # "vue"
             ];
             extraOptions = {
+              # init_options.plugins = [
+              #   {
+              #     name = "@vue/typescript-plugin";
+              #     location = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin";
+              #     languages = ["javascript" "typescript" "vue"];
+              #   }
+              # ];
               settings = {
                 javascript = {
                   inlayHints = {
