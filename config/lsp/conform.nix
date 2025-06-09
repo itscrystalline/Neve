@@ -92,6 +92,8 @@
       checkstyle
       shellcheck
       ktlint
+      typescript-language-server
+      vue-language-server
     ];
     extraPython3Packages = p: [
       p.flake8
