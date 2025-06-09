@@ -170,6 +170,12 @@
               };
             };
           };
+          qmlls = {
+            enable = true;
+            extraOptions = {
+              cmd = ["qmlls" "-E"];
+            };
+          };
         };
         keymaps = {
           silent = true;
