@@ -36,6 +36,8 @@
         open_mapping = "[[<leader>n]]";
         start_in_insert = false;
         insert_mappings = false;
+        terminal_mappings = false;
+        shade_terminals = false;
         size = ''
           function(term)
             if term.direction == "horizontal" then
