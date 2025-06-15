@@ -19,6 +19,9 @@
         message = {
           enabled = true;
         };
+        # hover = {
+        #   enabled = false;
+        # };
         progress = {
           enabled = false;
           view = "mini";

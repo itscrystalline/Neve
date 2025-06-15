@@ -112,8 +112,6 @@
       laststatus = 3; # (https://neovim.io/doc/user/options.html#'laststatus')
 
       inccommand = "split"; # (https://neovim.io/doc/user/options.html#'inccommand')
-
-      winborder = "rounded";
     };
 
     extraConfigLua = ''

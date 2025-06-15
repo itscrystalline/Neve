@@ -303,9 +303,9 @@
     };
 
     extraConfigLua = ''
-        local _border = "rounded"
-
         vim.lsp.inlay_hint.enable(true)
+
+        local _border = "rounded"
 
         require('lspconfig.ui.windows').default_options = {
           border = _border
