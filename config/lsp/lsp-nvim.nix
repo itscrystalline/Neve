@@ -292,7 +292,10 @@
             default_settings = {
               inlayHints = {lifetimeElisionHints = {enable = "always";};};
               rust-analyzer = {
-                cargo = {allFeatures = true;};
+                cargo = {
+                  allFeatures = true;
+                  targetDir = true;
+                };
                 check = {command = "clippy";};
                 files = {excludeDirs = ["target" ".git" ".cargo" ".github" ".direnv"];};
               };
