@@ -51,6 +51,17 @@
           volar = {
             enable = true;
           };
+          jsonls = {
+            enable = true;
+          };
+          yamlls = {
+            enable = true;
+            settings = {
+              schemas = {
+                "https://json.schemastore.org/github-workflow.json" = "/.github/workflows/*";
+              };
+            };
+          };
           ts_ls = {
             enable = true;
             autostart = true;
