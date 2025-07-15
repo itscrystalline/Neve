@@ -187,6 +187,10 @@
               cmd = ["qmlls" "-E"];
             };
           };
+          veridian = {
+            enable = true;
+            package = null;
+          };
         };
         keymaps = {
           silent = true;
