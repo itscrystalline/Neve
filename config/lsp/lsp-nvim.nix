@@ -187,9 +187,9 @@
               cmd = ["qmlls" "-E"];
             };
           };
-          veridian = {
+          verible = {
             enable = true;
-            package = null;
+            cmd = ["verible-verilog-ls" "--lsp_enable_hover"];
           };
         };
         keymaps = {
