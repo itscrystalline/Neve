@@ -187,9 +187,13 @@
               cmd = ["qmlls" "-E"];
             };
           };
-          verible = {
+          veridian = {
             enable = true;
-            cmd = ["verible-verilog-ls" "--lsp_enable_hover"];
+            autostart = true;
+            package = null;
+            cmd = ["veridian"];
+            filetypes = ["systemverilog" "verilog"];
+            rootMarkers = [".git" "veridian.yml"];
           };
         };
         keymaps = {
