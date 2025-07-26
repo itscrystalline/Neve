@@ -160,7 +160,21 @@
           #   };
           # };
           asm_lsp = {
-            package = pkgs.asm-lsp;
+            package = pkgs.asm-lsp.overrideAttrs (final: prev: {
+              version = "1ede2e6";
+              src = pkgs.fetchFromGitHub {
+                owner = "bergercookie";
+                repo = "asm-lsp";
+                rev = "1ede2e64d47ad356632418740c316f1950816e37";
+                hash = "sha256-c/IFniC54WctMTED242AQsFe5gfxKfMEE/GxsN6Em4w=";
+              };
+              cargoDeps = prev.cargoDeps.overrideAttrs (prevDepsAttrs: {
+                vendorStaging = prevDepsAttrs.vendorStaging.overrideAttrs {
+                  inherit (final) src version;
+                  outputHash = "sha256-4GbKT8+TMf2o563blj8lnZTD7Lc+z9yW11TfxYzDSg4=";
+                };
+              });
+            });
             enable = true;
           };
           kotlin_language_server = {
